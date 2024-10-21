@@ -39,21 +39,21 @@ void Item::RemoveType(std::uint32_t type)
 
 void Item::ConsumeMana()
 {
-	if (mType & CreaType::Magic) {
+	if (mType & ItemType::Magic) {
 		printf("%i mana consumed", mManaConsumptionAmount);
 	}
 }
 
 void Item::CursedEffect()
 {
-	if (mType & CreaType::Cursed) {
+	if (mType & ItemType::Cursed) {
 		printf("%i damages because of curse effect", mCurseLevel * 10);
 	}
 }
 
 bool Item::UseDurability()
 {
-	if (mType & CreaType::Breackable) {
+	if (mType & ItemType::Breackable) {
 		mDurability--;
 		printf("durability used : durability is now %i", mDurability);
 

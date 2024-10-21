@@ -127,7 +127,20 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="CPP_InventoryPract.cpp" />
+    <ClCompile Include="armor.cpp" />
+    <ClCompile Include="consumable.cpp" />
+    <ClCompile Include="item.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="tool.cpp" />
+    <ClCompile Include="weapon.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="armor.h" />
+    <ClInclude Include="consumable.h" />
+    <ClInclude Include="item.h" />
+    <ClInclude Include="itemType.h" />
+    <ClInclude Include="tool.h" />
+    <ClInclude Include="weapon.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
