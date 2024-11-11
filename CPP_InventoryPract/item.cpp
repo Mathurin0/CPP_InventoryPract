@@ -1,5 +1,6 @@
 #include "item.h"
 #include "itemType.h"
+#include<iostream>
 
 Item::Item(std::string name, std::string description, int cost, uint8_t type, int manaConsumptionAmount, int curseLevel, int durability)
 {
@@ -27,14 +28,28 @@ uint8_t Item::GetType()
 	return mType;
 }
 
+bool Item::HasType(std::uint8_t type)
+{
+	if ((mType & type) != 0)
+	{
+		return true;
+	}
+	return false;
+}
+
+std::string Item::GetName()
+{
+	return mName;
+}
+
 void Item::AddType(std::uint32_t type)
 {
-	mType |= type;
+	mType += type;
 }
 
 void Item::RemoveType(std::uint32_t type)
 {
-	mType ^= type;
+	mType -= type;
 }
 
 void Item::ConsumeMana()
@@ -63,4 +78,10 @@ bool Item::UseDurability()
 		}
 	}
 	return true;
+}
+
+void Item::SpreadFire(Item item)
+{
+	item.mIsBurning = true;
+	std::cout << "Spread fire to " << item.mName << std::endl;
 }

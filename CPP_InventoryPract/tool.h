@@ -1,5 +1,6 @@
-#pragma once
-class tool
+#include "item.h"
+
+class Tool : public Item
 {
 };
 

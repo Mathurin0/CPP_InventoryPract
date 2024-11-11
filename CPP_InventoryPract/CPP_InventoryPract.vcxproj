@@ -129,16 +129,29 @@
   <ItemGroup>
     <ClCompile Include="armor.cpp" />
     <ClCompile Include="consumable.cpp" />
+    <ClCompile Include="dish.cpp" />
+    <ClCompile Include="food.cpp" />
+    <ClCompile Include="IBackable.cpp" />
+    <ClCompile Include="inventory.cpp" />
     <ClCompile Include="item.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="potion.cpp" />
     <ClCompile Include="tool.cpp" />
     <ClCompile Include="weapon.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="armor.h" />
     <ClInclude Include="consumable.h" />
+    <ClInclude Include="dish.h" />
+    <ClInclude Include="effectType.h" />
+    <ClInclude Include="food.h" />
+    <ClInclude Include="foodType.h" />
+    <ClInclude Include="IBackable.h" />
+    <ClInclude Include="IFlammable.h" />
+    <ClInclude Include="inventory.h" />
     <ClInclude Include="item.h" />
     <ClInclude Include="itemType.h" />
+    <ClInclude Include="potion.h" />
     <ClInclude Include="tool.h" />
     <ClInclude Include="weapon.h" />
   </ItemGroup>

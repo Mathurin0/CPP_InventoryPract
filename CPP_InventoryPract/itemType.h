@@ -9,7 +9,6 @@ namespace ItemType {
 		Tool = 1<<4,
 		Weapon = 1<<5,
 		Armor = 1<<6,
-		Food = 1<<8
 	};
 
 	uint8_t operator +(uint8_t const& a, Type const& b) {

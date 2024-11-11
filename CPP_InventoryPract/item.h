@@ -1,22 +1,42 @@
 #pragma once
 #include <string>
+#include "IFlammable.h"
 
-class Item
+class Item : IFlammable
 {
 public :
 	Item(std::string name, std::string description, int cost, uint8_t type, int manaConsumptionAmount, int curseLevel, int durability);
 	~Item();
 
-	void SetType(std::uint8_t type);
+	std::string GetName();
+	void SetType(uint8_t type);
 	uint8_t GetType();
-	void AddType(std::uint32_t type);
-	void RemoveType(std::uint32_t type);
+	bool HasType(uint8_t type);
+	void AddType(uint32_t type);
+	void RemoveType(uint32_t type);
 
 	void ConsumeMana();
 	void CursedEffect();
 	bool UseDurability();
 
-private :
+	void IFlammable::SpreadFire(Item item) override;
+
+	bool operator ==(Item b) {
+		if (mName == b.mName &&
+			mDescription == b.mDescription &&
+			mCost == b.mCost &&
+			mType == b.mType &&
+			mManaConsumptionAmount == b.mManaConsumptionAmount &&
+			mCurseLevel == b.mCurseLevel &&
+			mDurability == b.mDurability) {
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
+
+protected :
 	std::string mName;
 	std::string mDescription;
 	int mCost;
@@ -24,4 +44,5 @@ private :
 	int mManaConsumptionAmount;
 	int mCurseLevel;
 	int mDurability;
+	int mIsBurning = false;
 };
