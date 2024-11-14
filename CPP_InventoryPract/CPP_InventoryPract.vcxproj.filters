@@ -68,9 +68,6 @@
     <ClInclude Include="armor.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="IFlammable.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="inventory.h">
       <Filter>Header Files</Filter>
     </ClInclude>

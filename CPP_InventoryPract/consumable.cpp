@@ -1,6 +1,6 @@
 #include "consumable.h"
 
-Consumable::Consumable(uint8_t effect, std::string name, std::string description, int cost, uint8_t type, int manaConsumptionAmount, int curseLevel, int durability) : Item(name, description, cost, type, manaConsumptionAmount, curseLevel, durability)
+Consumable::Consumable(uint8_t effect, std::string name, std::string description, int cost, int manaConsumptionAmount, int curseLevel, int durability) : Item(name, description, cost, ItemType::Consumable, manaConsumptionAmount, curseLevel, durability)
 {
 	mEffect = effect;
 }
@@ -9,37 +9,33 @@ void Consumable::Consume()
 {
 	std::cout << "You consummed " << mName << " and got following effects : " << std::endl;
 
-	if (mEffect > 1 << 7) {
-		std::cout << "Cold Protection" << std::endl;
-		mEffect - EffectType::ColdProtection;
-	}
 	if (mEffect > 1 << 6) {
-		std::cout << "Fire Resistance" << std::endl;
-		mEffect - EffectType::FireResistance;
+		std::cout << "Cold Protection" << std::endl;
+		mEffect -= EffectType::ColdProtection;
 	}
 	if (mEffect > 1 << 5) {
-		std::cout << "Water Breathing" << std::endl;
-		mEffect - EffectType::WaterBreathing;
+		std::cout << "Fire Resistance" << std::endl;
+		mEffect -= EffectType::FireResistance;
 	}
 	if (mEffect > 1 << 4) {
-		std::cout << "Poison" << std::endl;
-		mEffect - EffectType::Poison;
+		std::cout << "Water Breathing" << std::endl;
+		mEffect -= EffectType::WaterBreathing;
 	}
 	if (mEffect > 1 << 3) {
-		std::cout << "Weakness" << std::endl;
-		mEffect - EffectType::Weakness;
+		std::cout << "Poison" << std::endl;
+		mEffect -= EffectType::Poison;
 	}
 	if (mEffect > 1 << 2) {
 		std::cout << "Defense" << std::endl;
-		mEffect - EffectType::Defense;
+		mEffect -= EffectType::Defense;
 	}
 	if (mEffect > 1 << 1) {
 		std::cout << "Strength" << std::endl;
-		mEffect - EffectType::Strength;
+		mEffect -= EffectType::Strength;
 	}
 	if (mEffect > 1 << 0) {
 		std::cout << "Speed" << std::endl;
-		mEffect - EffectType::Speed;
+		mEffect -= EffectType::Speed;
 	}
 
 	delete(this);

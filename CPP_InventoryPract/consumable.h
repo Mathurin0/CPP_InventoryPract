@@ -1,11 +1,13 @@
+#pragma once
 #include <iostream>
 #include "item.h"
 #include "effectType.h"
+#include "itemType.h"
 
 class Consumable : public Item
 {
 public :
-	Consumable(uint8_t effect, std::string name, std::string description, int cost, uint8_t type, int manaConsumptionAmount, int curseLevel, int durability);
+	Consumable(uint8_t effect, std::string name, std::string description, int cost, int manaConsumptionAmount, int curseLevel, int durability);
 
 	void Consume();
 

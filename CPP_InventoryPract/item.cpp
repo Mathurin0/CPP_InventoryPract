@@ -80,8 +80,14 @@ bool Item::UseDurability()
 	return true;
 }
 
-void Item::SpreadFire(Item item)
+void Item::Burn()
 {
-	item.mIsBurning = true;
-	std::cout << "Spread fire to " << item.mName << std::endl;
+	mIsBurning = true;
+	std::cout << mName << " is now burning" << std::endl;
+}
+
+void Item::SpreadFire(Item* item)
+{
+	std::cout << "Spread fire to " << item->GetName() << std::endl;
+	item->Burn();
 }

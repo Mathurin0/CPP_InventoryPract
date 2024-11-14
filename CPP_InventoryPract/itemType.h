@@ -11,19 +11,19 @@ namespace ItemType {
 		Armor = 1<<6,
 	};
 
-	uint8_t operator +(uint8_t const& a, Type const& b) {
+	inline uint8_t operator+(uint8_t const& a, Type const& b) {
 		return a | b;
 	}
 
-	uint8_t operator -(uint8_t const& a, Type const& b) {
+	inline uint8_t operator-(uint8_t const& a, Type const& b) {
 		return a ^ b;
 	}
 
-	void operator +=(uint8_t & a, Type const& b) {
+	inline void operator+=(uint8_t & a, Type const& b) {
 		a = a | b;
 	}
 
-	void operator -=(uint8_t & a, Type const& b) {
+	inline void operator-=(uint8_t & a, Type const& b) {
 		a = a ^ b;
 	}
 }

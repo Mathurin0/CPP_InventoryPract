@@ -1,6 +1,6 @@
 #include "dish.h"
 
-Dish::Dish(uint8_t foodType, uint8_t effect, std::string name, std::string description, int cost, uint8_t type, int manaConsumptionAmount, int curseLevel, int durability) : Consumable(effect, name, description, cost, type, manaConsumptionAmount, curseLevel, durability)
+Dish::Dish(uint8_t foodType, uint8_t effect, std::string name, std::string description, int cost, int manaConsumptionAmount, int curseLevel, int durability) : Consumable(effect, name, description, cost, manaConsumptionAmount, curseLevel, durability)
 {
 	mFoodType = foodType;
 }

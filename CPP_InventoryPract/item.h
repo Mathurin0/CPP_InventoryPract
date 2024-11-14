@@ -1,8 +1,15 @@
 #pragma once
 #include <string>
-#include "IFlammable.h"
 
-class Item : IFlammable
+class Item;
+
+class IFlammable
+{
+public:
+	virtual void SpreadFire(Item* item) = 0;
+};
+
+class Item : public IFlammable
 {
 public :
 	Item(std::string name, std::string description, int cost, uint8_t type, int manaConsumptionAmount, int curseLevel, int durability);
@@ -19,7 +26,8 @@ public :
 	void CursedEffect();
 	bool UseDurability();
 
-	void IFlammable::SpreadFire(Item item) override;
+	void SpreadFire(Item* item) override;
+	void Burn();
 
 	bool operator ==(Item b) {
 		if (mName == b.mName &&
